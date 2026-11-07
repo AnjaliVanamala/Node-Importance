@@ -1,19 +1,17 @@
-### Node Importance and Cytoscape Export Program
+### Correlation Matrix and Cytoscape Export Program
 
 A Python program that takes in a relative abundance file and generates correlation matrices using Spearman correlation coefficients between taxa. The program separates the data into specified treatment/time pairings and generates a correlation matrix for each pairing.
 
 The program then loads the correlation matrices and converts them into an adjacency list representation. It calculates node importance based on the sum of the absolute values of the correlation coefficients connected to each node.
 
-**Node importance is calculated using the equation:**
+**Node importance is calculated using the following equation:**
 
-\[
-I_i = \sum_{j \in N(i)} |r_{ij}|
-\]
+`I_i = sum(|r_ij|)`
 
 Where:
-- \(I_i\) = importance of node \(i\).
-- \(N(i)\) = nodes connected to node \(i\).
-- \(r_{ij}\) = correlation coefficient between node \(i\) and node \(j\).
+- `I_i` = importance of node i.
+- `N(i)` = nodes connected to node i.
+- `r_ij` = correlation coefficient between node i and node j.
 
 The program also calculates the average abundance for each taxa. Node importance can be used for both the size and color of the network in Cytoscape, while average abundance can also be used for visualization if desired.
 
